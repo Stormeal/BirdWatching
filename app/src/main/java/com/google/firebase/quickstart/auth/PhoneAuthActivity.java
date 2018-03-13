@@ -341,7 +341,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
                 break;
             case STATE_SIGNIN_SUCCESS:
                 // Np-op, handled by sign-in check
-                Intent intent = new Intent(PhoneAuthActivity.this, BirdWatching.class);
+                Intent intent = new Intent(PhoneAuthActivity.this, MainActivity.class);
                 startActivity(intent);
                 break;
         }

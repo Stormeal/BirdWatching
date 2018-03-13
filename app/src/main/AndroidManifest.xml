@@ -28,7 +28,7 @@
             android:name=".AnonymousAuthActivity"
             android:label="@string/label_anonymous_auth" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ObservationsAdd"></activity>
+        <activity android:name=".ObservationsAdd"/>
     </application>
 
 </manifest>

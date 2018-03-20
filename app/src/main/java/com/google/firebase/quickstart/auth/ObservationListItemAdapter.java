@@ -13,6 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.quickstart.auth.R;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -34,7 +37,7 @@ public class ObservationListItemAdapter extends ArrayAdapter<Observation> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Observation observation = getItem(position);
         String nameEnglish = observation.getNameEnglish();
-        Calendar created = observation.getCreated();
+        String created = observation.getCreated();
         LinearLayout observationView;
         if (convertView == null) {
             observationView = new LinearLayout(getContext());

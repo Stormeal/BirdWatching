@@ -7,48 +7,98 @@
     android:orientation="vertical"
     tools:context="com.google.firebase.quickstart.auth.ObservationsAdd">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add book" />
-
-    <EditText
-        android:id="@+id/add_book_title_edittext"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title"
-        android:inputType="textCapWords" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/add_book_author_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Author"
-        android:inputType="textCapWords" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/add_book_publisher_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Publisher"
-        android:inputType="textCapWords" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Declare New Observation" />
 
-    <EditText
-        android:id="@+id/add_book_price_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Price"
-        android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/add_observation_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Observation ID"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="8dp"/>
 
-    <!--<Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="addBook2"
-        android:text="Add" /> -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select a Bird"/>
 
-    <TextView
-        android:id="@+id/add_book_message_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/add_observation_birdId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Bird" />
+
+            <EditText
+                android:id="@+id/add_Observation_UserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="UserID"
+                android:inputType="textCapWords" />
+
+
+            <EditText
+                android:id="@+id/add_observation_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Latitude"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/add_observation_longtitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Longtitude"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/add_observation_placement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Placement"
+                android:inputType="textCapWords" />
+
+            <EditText
+                android:id="@+id/add_observation_population"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Population"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/add_observation_comment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Comment"
+                android:inputType="textCapWords" />
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></DatePicker>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addObservation2"
+                android:text="Add" />
+
+            <TextView
+                android:id="@+id/add_observation_message_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

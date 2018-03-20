@@ -7,6 +7,7 @@ package com.google.firebase.quickstart.auth;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 
@@ -16,9 +17,9 @@ public class Observation implements Serializable {
     @SerializedName("BirdId")
     private int birdId;
     @SerializedName("UserId")
-    private int userId;
+    private String userId;
     @SerializedName("Created")
-    private Calendar created;
+    private String created;
     @SerializedName("Latitude")
     private double latitude;
     @SerializedName("Longtitude")
@@ -37,7 +38,7 @@ public class Observation implements Serializable {
     public Observation() {
     }
 
-    public Observation(int birdId, String comment, Calendar created, int id, double latitude, double longtitude, String placename, int population, int userId, String nameEnglish, String nameDanish){
+    public Observation(int birdId, String comment, String created, int id, double latitude, double longtitude, String placename, int population, String userId, String nameEnglish, String nameDanish){
         this.birdId = birdId;
         this.comment = comment;
         this.created = created;
@@ -55,32 +56,31 @@ public class Observation implements Serializable {
     // Properties (SET)
     public void setBirdId(int birdId) {this.birdId = birdId;}
     public void setComment(String comment) {this.comment =comment;}
-    public void setCreated(Calendar created) {this.created = created;}
+    public void setCreated(String created) {this.created = created;}
     public void setId(int id) {this.id = id;}
     public void setLatitude(double latitude) {this.latitude = latitude;}
     public void setLongtitude(double longtitude) {this.longtitude = longtitude;}
     public void setPlacename(String placename) {this.placename = placename;}
     public void setPopulation(int population) {this.population = population;}
-    public void setUserId(int userId) {this.userId = userId;}
+    public void setUserId(String userId) {this.userId = userId;}
     public void setNameEnglish(String nameEnglish) {this.nameEnglish = nameEnglish;}
     public void setNameDanish(String nameDanish) {this.nameDanish = nameDanish;}
 
     // Properties (GET)
     public int getBirdId(){return birdId;}
     public String getComment(){return comment;}
-    public Calendar getCreated(){return created;}
+    public String getCreated(){return created;}
     public int getId(){return id;}
     public double getLatitude(){return latitude;}
     public double getLongtitude(){return longtitude;}
     public String getPlacename(){return placename;}
     public int getPopulation(){return population;}
-    public int getUserId(){return userId;}
+    public String getUserId(){return userId;}
     public String getNameEnglish(){return nameEnglish;}
     public String getNameDanish(){return nameDanish;}
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return nameEnglish;
+    }
 }

@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.quickstart.auth.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -42,23 +43,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(CharSequence jsonString) {
             TextView messageTextView = findViewById(R.id.main_message_textview);
-            /*
-            final List<Book> books = new ArrayList<>();
-            try {
-                JSONArray array = new JSONArray(jsonString.toString());
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject obj = array.getJSONObject(i);
-                    String author = obj.getString("Author");
-                    double price = obj.getDouble("Price");
-                    String title = obj.getString("Title");
-                    String publisher = obj.getString("Publisher");
-                    int id = obj.getInt("Id");
-                    Book book = new Book(id, author, title, publisher, price);
-                    books.add(book);
-                }
-                */
+            Log.d("mine", jsonString.toString());
+
+
             Gson gson = new GsonBuilder().create();
+
             final Observation[] observations = gson.fromJson(jsonString.toString(), Observation[].class);
+
+
 
             ListView listView = findViewById(R.id.main_observation_listview);
 

@@ -1,30 +1,57 @@
 package com.google.firebase.quickstart.auth;
 
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.quickstart.auth.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class MainActivity extends AppCompatActivity {
+    private ShareActionProvider shareActionProvider;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         TextView listHeader = new TextView(this);
         listHeader.setText("Observations");
         listHeader.setTextAppearance(this, android.R.style.TextAppearance_Large);
         ListView listView = findViewById(R.id.main_observation_listview);
         listView.addHeaderView(listHeader);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int res_id = item.getItemId();
+        if (res_id==R.id.action_settings){
+            Toast.makeText(getApplicationContext(), "You selected Settings", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 
     @Override
@@ -77,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
             TextView messageTextView = findViewById(R.id.main_message_textview);
             messageTextView.setText(message);
             Log.e("OBSERVATIONS", message.toString());
+
+
+
         }
     }
+
+
 }

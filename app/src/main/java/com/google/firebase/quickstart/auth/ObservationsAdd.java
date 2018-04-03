@@ -67,7 +67,7 @@ public class ObservationsAdd extends AppCompatActivity {
             String jsonDocument = jsonObject.toString();
             messageView.setText(jsonDocument);
             PostObservationTask task = new PostObservationTask();
-            task.execute("http://anbo-restserviceproviderbooks.azurewebsites.net/Service1.svc/books", jsonDocument);
+            task.execute("http://birdobservationservice.azurewebsites.net/service1.svc/observations", jsonDocument);
         } catch (JSONException ex) {
             messageView.setText(ex.getMessage());
         }
